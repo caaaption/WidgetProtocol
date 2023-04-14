@@ -32,6 +32,8 @@
 			<key>INIntentParameters</key>
 			<array>
 				<dict>
+					<key>INIntentParameterConfigurable</key>
+					<true/>
 					<key>INIntentParameterDisplayName</key>
 					<string>Address</string>
 					<key>INIntentParameterDisplayNameID</key>
@@ -47,6 +49,8 @@
 					</dict>
 					<key>INIntentParameterName</key>
 					<string>address</string>
+					<key>INIntentParameterSupportsDynamicEnumeration</key>
+					<true/>
 					<key>INIntentParameterTag</key>
 					<integer>10</integer>
 					<key>INIntentParameterType</key>

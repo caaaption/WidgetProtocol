@@ -16,6 +16,12 @@ struct Provider: IntentTimelineProvider {
   
   func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
     guard let address = configuration.address else {
+      let entry = SimpleEntry(
+        date: .init(),
+        balance: 0.0,
+        configuration: ConfigurationIntent()
+      )
+      completion(entry)
       return
     }
     Task {
@@ -43,6 +49,13 @@ struct Provider: IntentTimelineProvider {
     ) ?? Date()
     
     guard let address = configuration.address else {
+      let entry = SimpleEntry(
+        date: .init(),
+        balance: 0.0,
+        configuration: ConfigurationIntent()
+      )
+      let timeline = Timeline(entries: [entry], policy: .after(refresh))
+      completion(timeline)
       return
     }
     
