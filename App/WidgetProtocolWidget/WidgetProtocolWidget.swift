@@ -15,6 +15,7 @@ public struct WidgetModel: Codable {
     case lens(String)
     case lensFollowers(Int)
     case lensFollowing(Int)
+    case livepeer
   }
 }
 
@@ -104,6 +105,14 @@ struct Provider: IntentTimelineProvider {
           configuration: configuration
         )
       )
+    case .livepeer:
+      completion(
+        SimpleEntry(
+          date: .init(),
+          type: .livepeer,
+          configuration: configuration
+        )
+      )
     }
   }
   
@@ -131,6 +140,7 @@ struct SimpleEntry: TimelineEntry {
     case lens(String)
     case lensFollowers(Int)
     case lensFollowing(Int)
+    case livepeer
   }
 }
 
@@ -164,6 +174,8 @@ struct WidgetProtocolWidgetEntryView : View {
         title: "Following Count",
         count: count
       )
+    case .livepeer:
+      LivepeerView()
     default:
       ProgressView()
     }

@@ -6,6 +6,7 @@ import PushNotificationFeature
 import LensLinkFeature
 import LensFollowerFeature
 import LensFollowingFeature
+import LivepeerFeature
 
 public struct ProjectListView: View {
   let store: StoreOf<ProjectListReducer>
@@ -92,6 +93,18 @@ public struct ProjectListView: View {
         )
         
         NavigationLink(
+          destination: LivepeerView(
+            store: store.scope(state: \.livepeer, action: ProjectListReducer.Action.livepeer)
+          ),
+          label: {
+            ProjectCard(
+              imageUrl: "https://pbs.twimg.com/profile_images/1511023637893025795/Oa1JC3Zt_400x400.jpg",
+              title: "Livepeer"
+            )
+          }
+        )
+        
+        NavigationLink(
           destination: Text("404 not found"),
           label: {
             ProjectCard(
@@ -117,16 +130,6 @@ public struct ProjectListView: View {
             ProjectCard(
               imageUrl: "https://pbs.twimg.com/profile_images/1603829076346667022/6J-QZXPB_400x400.jpg",
               title: "Gnosis Chain"
-            )
-          }
-        )
-        
-        NavigationLink(
-          destination: Text("404 not found"),
-          label: {
-            ProjectCard(
-              imageUrl: "https://pbs.twimg.com/profile_images/1529510825152483330/hb8hQIWP_400x400.jpg",
-              title: "Dogechain"
             )
           }
         )

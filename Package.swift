@@ -33,6 +33,7 @@ var package = Package(
       "LensLinkFeature",
       "LensFollowerFeature",
       "LensFollowingFeature",
+      "LivepeerFeature",
     ]),
     .target(name: "ProjectFeature", dependencies: [
       "ProgressAsyncImage",
@@ -90,6 +91,16 @@ package.targets.append(contentsOf: [
     .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
   ]),
   .target(name: "LensFollowingFeature", dependencies: [
+    "UserDefaultsClient",
+    .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+  ]),
+])
+
+package.products.append(contentsOf: [
+  .library(name: "LivepeerFeature", targets: ["LivepeerFeature"]),
+])
+package.targets.append(contentsOf: [
+  .target(name: "LivepeerFeature", dependencies: [
     "UserDefaultsClient",
     .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
   ]),

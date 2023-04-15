@@ -5,6 +5,7 @@ import PushNotificationFeature
 import LensLinkFeature
 import LensFollowerFeature
 import LensFollowingFeature
+import LivepeerFeature
 
 public struct ProjectListReducer: ReducerProtocol {
   public init() {}
@@ -16,6 +17,7 @@ public struct ProjectListReducer: ReducerProtocol {
     public var lensLink = LensLinkReducer.State()
     public var lensFollower = LensFollowerReducer.State()
     public var lensFollowing = LensFollowingReducer.State()
+    public var livepeer = LivepeerReducer.State()
     
     @BindingState public var searchable = ""
     public init() {}
@@ -28,6 +30,7 @@ public struct ProjectListReducer: ReducerProtocol {
     case lensLink(LensLinkReducer.Action)
     case lensFollower(LensFollowerReducer.Action)
     case lensFollowing(LensFollowingReducer.Action)
+    case livepeer(LivepeerReducer.Action)
 
     case task
     case refreshable
@@ -54,9 +57,12 @@ public struct ProjectListReducer: ReducerProtocol {
     Scope(state: \.lensFollowing, action: /Action.lensFollowing) {
       LensFollowingReducer()
     }
+    Scope(state: \.livepeer, action: /Action.livepeer) {
+      LivepeerReducer()
+    }
     Reduce { state, action in
       switch action {
-      case .balance, .link, .notification, .lensLink, .lensFollower, .lensFollowing:
+      case .balance, .link, .notification, .lensLink, .lensFollower, .lensFollowing, .livepeer:
         return EffectTask.none
 
       case .task:

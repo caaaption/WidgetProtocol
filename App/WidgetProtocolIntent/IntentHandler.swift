@@ -11,6 +11,7 @@ public struct WidgetModel: Codable {
     case lens(String)
     case lensFollowers(Int)
     case lensFollowing(Int)
+    case livepeer
   }
 }
 
