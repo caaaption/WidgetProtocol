@@ -39,6 +39,7 @@ var package = Package(
 package.products.append(contentsOf: [
   .library(name: "QuickNodeClient", targets: ["QuickNodeClient"]),
   .library(name: "QuickNodeBalanceFeature", targets: ["QuickNodeBalanceFeature"]),
+  .library(name: "QuickNodeNFTFeature", targets: ["QuickNodeNFTFeature"]),
 ])
 package.targets.append(contentsOf: [
   .target(name: "QuickNodeClient", dependencies: [
@@ -48,6 +49,10 @@ package.targets.append(contentsOf: [
     "UserDefaultsClient",
     .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
   ]),
+  .target(name: "QuickNodeNFTFeature", dependencies: [
+    "UserDefaultsClient",
+    .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+  ])
 ])
 
 package.products.append(contentsOf: [
