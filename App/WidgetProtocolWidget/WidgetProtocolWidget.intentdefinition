@@ -35,7 +35,7 @@
 					<key>INIntentParameterConfigurable</key>
 					<true/>
 					<key>INIntentParameterDisplayName</key>
-					<string>Title</string>
+					<string>Widget</string>
 					<key>INIntentParameterDisplayNameID</key>
 					<string>5kZUCZ</string>
 					<key>INIntentParameterDisplayPriority</key>

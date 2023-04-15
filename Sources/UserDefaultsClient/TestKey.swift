@@ -6,14 +6,14 @@ extension UserDefaultsClient: TestDependencyKey {
   public static let previewValue = Self.noop
 
   public static let testValue = Self(
-    stringArray: unimplemented("\(Self.self).stringArray"),
-    setArray: unimplemented("\(Self.self).setArray")
+    string: unimplemented("\(Self.self).string"),
+    setString: unimplemented("\(Self.self).setString")
   )
 }
 
 extension UserDefaultsClient {
   public static let noop = Self(
-    stringArray: { _ in [] },
-    setArray: { _, _ in }
+    string: { _ in "" },
+    setString: { _, _ in }
   )
 }

@@ -1,10 +1,29 @@
 import WidgetKit
 import SwiftUI
 import Intents
+import QuickNodeClient
+import ComposableArchitecture
+
+public struct WidgetModel: Codable {
+  let title: String
+  let type: WidgetType
+  
+  public enum WidgetType: Codable {
+    case balance(String)
+    case art(Data)
+  }
+}
 
 struct Provider: IntentTimelineProvider {
+  let userDefaults = UserDefaults(suiteName: "group.com.caaaption.app.WidgetProtocol")!
+  @Dependency(\.quickNodeClient) var quickNodeClient
+  
   func placeholder(in context: Context) -> SimpleEntry {
-    SimpleEntry(date: Date(), type: .balance(0.0), configuration: ConfigurationIntent())
+    SimpleEntry(
+      date: Date(),
+      type: nil,
+      configuration: ConfigurationIntent()
+    )
   }
   
   func getSnapshot(
@@ -12,13 +31,44 @@ struct Provider: IntentTimelineProvider {
     in context: Context,
     completion: @escaping (SimpleEntry) -> ()
   ) {
-    completion(
-      SimpleEntry(
-        date: .init(),
-        type: .balance(0.0),
-        configuration: configuration
+    let decoder = JSONDecoder()
+    guard
+      let title = configuration.title,
+      let json = userDefaults.string(forKey: "widget-models"),
+      let data = json.data(using: .utf8),
+      let models = try? decoder.decode([WidgetModel].self, from: data),
+      let model = models.first(where: { $0.title == title })
+    else {
+      completion(
+        SimpleEntry(
+          date: .init(),
+          type: nil,
+          configuration: configuration
+        )
       )
-    )
+      return
+    }
+    switch model.type {
+    case let .balance(address):
+      Task {
+        let balance = try await quickNodeClient.getBalance(address)
+        completion(
+          SimpleEntry(
+            date: .init(),
+            type: .balance(address, balance),
+            configuration: configuration
+          )
+        )
+      }
+    case let .art(data):
+      completion(
+        SimpleEntry(
+          date: .init(),
+          type: .art(data),
+          configuration: configuration
+        )
+      )
+    }
   }
   
   func getTimeline(
@@ -26,24 +76,20 @@ struct Provider: IntentTimelineProvider {
     in context: Context,
     completion: @escaping (Timeline<Entry>) -> ()
   ) {
-    let entry = SimpleEntry(
-      date: .init(),
-      type: .balance(0.0),
-      configuration: configuration
-    )
-    
-    let timeline = Timeline(entries: [entry], policy: .atEnd)
-    completion(timeline)
+    getSnapshot(for: configuration, in: context) { entry in
+      let timeline = Timeline(entries: [entry], policy: .atEnd)
+      completion(timeline)
+    }
   }
 }
 
 struct SimpleEntry: TimelineEntry {
   let date: Date
-  let type: DisplayType
+  let type: DisplayType?
   let configuration: ConfigurationIntent
   
   enum DisplayType {
-    case balance(Decimal)
+    case balance(String, Decimal)
     case art(Data)
   }
 }
@@ -52,7 +98,17 @@ struct WidgetProtocolWidgetEntryView : View {
   var entry: Provider.Entry
   
   var body: some View {
-    Text(entry.date, style: .time)
+    switch entry.type {
+    case let .balance(address, balance):
+      BalanceWidgetView(
+        address: address,
+        balance: balance
+      )
+    case let .art(data):
+      Text(data.description)
+    default:
+      ProgressView()
+    }
   }
 }
 
@@ -77,7 +133,7 @@ struct WidgetProtocolWidget_Previews: PreviewProvider {
     WidgetProtocolWidgetEntryView(
       entry: SimpleEntry(
         date: Date(),
-        type: .balance(0.0),
+        type: nil,
         configuration: ConfigurationIntent()
       )
     )

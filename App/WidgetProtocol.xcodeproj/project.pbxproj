@@ -25,6 +25,7 @@
 		B75A25BC29E3A2A20089DB2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B75A25BB29E3A2A20089DB2B /* Assets.xcassets */; };
 		B75A25BF29E3A2A20089DB2B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B75A25BE29E3A2A20089DB2B /* Preview Assets.xcassets */; };
 		B75A25C829E3A2ED0089DB2B /* AppFeature in Frameworks */ = {isa = PBXBuildFile; productRef = B75A25C729E3A2ED0089DB2B /* AppFeature */; };
+		B78CD22F29EB143E008B8775 /* BalanceWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78CD22A29EB031B008B8775 /* BalanceWidgetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		B75A25CE29E6C39C0089DB2B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		B75A25D029E6C39C0089DB2B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		B75A25E429E6C5D20089DB2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = WidgetProtocol/Info.plist; sourceTree = "<group>"; };
+		B78CD22A29EB031B008B8775 /* BalanceWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceWidgetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 		B72F8B6829EAAFCD00798B73 /* WidgetProtocolWidget */ = {
 			isa = PBXGroup;
 			children = (
+				B78CD22929EB0312008B8775 /* Widgets */,
 				B72F8B6929EAAFCD00798B73 /* WidgetProtocolWidgetBundle.swift */,
 				B72F8B6B29EAAFCD00798B73 /* WidgetProtocolWidget.swift */,
 				B72F8B6D29EAAFCD00798B73 /* WidgetProtocolWidget.intentdefinition */,
@@ -189,6 +192,14 @@
 				B715DC1729E9B58200531E39 /* IntentsUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B78CD22929EB0312008B8775 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				B78CD22A29EB031B008B8775 /* BalanceWidgetView.swift */,
+			);
+			path = Widgets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B78CD22F29EB143E008B8775 /* BalanceWidgetView.swift in Sources */,
 				B72F8B6A29EAAFCD00798B73 /* WidgetProtocolWidgetBundle.swift in Sources */,
 				B72F8B7129EAAFCD00798B73 /* WidgetProtocolWidget.intentdefinition in Sources */,
 				B72F8B6C29EAAFCD00798B73 /* WidgetProtocolWidget.swift in Sources */,
