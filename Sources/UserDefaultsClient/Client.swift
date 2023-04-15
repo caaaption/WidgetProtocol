@@ -20,6 +20,9 @@ public struct WidgetModel: Codable, Equatable {
   public enum WidgetType: Codable, Equatable {
     case balance(String)
     case link(String)
+    case notification
+    case lens(String)
+    case lensFollowers(Int)
   }
   
   public init(

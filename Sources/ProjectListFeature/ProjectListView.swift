@@ -2,6 +2,8 @@ import SwiftUI
 import ComposableArchitecture
 import QuickNodeBalanceFeature
 import PushLinkFeature
+import PushNotificationFeature
+import LensLinkFeature
 
 public struct ProjectListView: View {
   let store: StoreOf<ProjectListReducer>
@@ -40,11 +42,25 @@ public struct ProjectListView: View {
         )
         
         NavigationLink(
-          destination: Text("404 not found"),
+          destination: PushNotificationView(
+            store: store.scope(state: \.notification, action: ProjectListReducer.Action.notification)
+          ),
+          label: {
+            ProjectCard(
+              imageUrl: "https://pbs.twimg.com/profile_images/1616110831975931909/5tUeoUR__400x400.png",
+              title: "Notifications for Push Protocol"
+            )
+          }
+        )
+        
+        NavigationLink(
+          destination: LensLinkView(
+            store: store.scope(state: \.lensLink, action: ProjectListReducer.Action.lensLink)
+          ),
           label: {
             ProjectCard(
               imageUrl: "https://pbs.twimg.com/profile_images/1611047066746093593/cd3kFbZ4_400x400.jpg",
-              title: "Lens Protocol"
+              title: "Link for Lens Protocol"
             )
           }
         )

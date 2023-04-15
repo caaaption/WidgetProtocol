@@ -11,6 +11,9 @@ public struct WidgetModel: Codable {
   public enum WidgetType: Codable {
     case balance(String)
     case link(String)
+    case notification
+    case lens(String)
+    case lensFollowers(Int)
   }
 }
 
@@ -48,6 +51,11 @@ struct Provider: IntentTimelineProvider {
       )
       return
     }
+//  case balance(String)
+//  case link(String)
+//  case notification
+//  case lens(String)
+//  case lensFollowers(Int)
     switch model.type {
     case let .balance(address):
       Task {
@@ -65,6 +73,30 @@ struct Provider: IntentTimelineProvider {
         SimpleEntry(
           date: .init(),
           type: .link(link),
+          configuration: configuration
+        )
+      )
+    case .notification:
+      completion(
+        SimpleEntry(
+          date: .init(),
+          type: .notification,
+          configuration: configuration
+        )
+      )
+    case let .lens(useranme):
+      completion(
+        SimpleEntry(
+          date: .init(),
+          type: .lens(useranme),
+          configuration: configuration
+        )
+      )
+    case let .lensFollowers(count):
+      completion(
+        SimpleEntry(
+          date: .init(),
+          type: .lensFollowers(count),
           configuration: configuration
         )
       )
@@ -91,6 +123,9 @@ struct SimpleEntry: TimelineEntry {
   enum DisplayType {
     case balance(String, Decimal)
     case link(String)
+    case notification
+    case lens(String)
+    case lensFollowers(Int)
   }
 }
 
@@ -108,6 +143,11 @@ struct WidgetProtocolWidgetEntryView : View {
       PushLinkWidgetView(link: link)
         .widgetURL(
           URL(string: link)
+        )
+    case let .lens(username):
+      LensLinkView(username: username)
+        .widgetURL(
+          URL(string: "https://lenster.xyz/u/" + username)
         )
     default:
       ProgressView()

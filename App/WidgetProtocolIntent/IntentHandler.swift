@@ -7,6 +7,9 @@ public struct WidgetModel: Codable {
   public enum WidgetType: Codable {
     case balance(String)
     case link(String)
+    case notification
+    case lens(String)
+    case lensFollowers(Int)
   }
 }
 
