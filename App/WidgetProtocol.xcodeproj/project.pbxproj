@@ -27,6 +27,7 @@
 		B75A25C829E3A2ED0089DB2B /* AppFeature in Frameworks */ = {isa = PBXBuildFile; productRef = B75A25C729E3A2ED0089DB2B /* AppFeature */; };
 		B78CD22F29EB143E008B8775 /* BalanceWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78CD22A29EB031B008B8775 /* BalanceWidgetView.swift */; };
 		B78CD23229EB20F1008B8775 /* ArtWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78CD23029EB2081008B8775 /* ArtWidgetView.swift */; };
+		B78CD23529EB33FE008B8775 /* PushLinkWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78CD23329EB33FC008B8775 /* PushLinkWidgetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		B75A25E429E6C5D20089DB2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = WidgetProtocol/Info.plist; sourceTree = "<group>"; };
 		B78CD22A29EB031B008B8775 /* BalanceWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceWidgetView.swift; sourceTree = "<group>"; };
 		B78CD23029EB2081008B8775 /* ArtWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtWidgetView.swift; sourceTree = "<group>"; };
+		B78CD23329EB33FC008B8775 /* PushLinkWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushLinkWidgetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 			children = (
 				B78CD22A29EB031B008B8775 /* BalanceWidgetView.swift */,
 				B78CD23029EB2081008B8775 /* ArtWidgetView.swift */,
+				B78CD23329EB33FC008B8775 /* PushLinkWidgetView.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B78CD23529EB33FE008B8775 /* PushLinkWidgetView.swift in Sources */,
 				B78CD22F29EB143E008B8775 /* BalanceWidgetView.swift in Sources */,
 				B78CD23229EB20F1008B8775 /* ArtWidgetView.swift in Sources */,
 				B72F8B6A29EAAFCD00798B73 /* WidgetProtocolWidgetBundle.swift in Sources */,
