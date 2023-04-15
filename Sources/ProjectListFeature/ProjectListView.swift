@@ -38,6 +38,56 @@ public struct ProjectListView: View {
             )
           }
         )
+        
+        NavigationLink(
+          destination: Text("404 not found"),
+          label: {
+            ProjectCard(
+              imageUrl: "https://pbs.twimg.com/profile_images/1611047066746093593/cd3kFbZ4_400x400.jpg",
+              title: "Lens Protocol"
+            )
+          }
+        )
+        
+        NavigationLink(
+          destination: Text("404 not found"),
+          label: {
+            ProjectCard(
+              imageUrl: "https://pbs.twimg.com/profile_images/1341100720943054848/C4RKAej-_400x400.jpg",
+              title: "The Graph"
+            )
+          }
+        )
+        
+        NavigationLink(
+          destination: Text("404 not found"),
+          label: {
+            ProjectCard(
+              imageUrl: "https://pbs.twimg.com/profile_images/1639270979288399876/3OT3Lsux_400x400.jpg",
+              title: "Polygon"
+            )
+          }
+        )
+        
+        NavigationLink(
+          destination: Text("404 not found"),
+          label: {
+            ProjectCard(
+              imageUrl: "https://pbs.twimg.com/profile_images/1603829076346667022/6J-QZXPB_400x400.jpg",
+              title: "Gnosis Chain"
+            )
+          }
+        )
+        
+        NavigationLink(
+          destination: Text("404 not found"),
+          label: {
+            ProjectCard(
+              imageUrl: "https://pbs.twimg.com/profile_images/1529510825152483330/hb8hQIWP_400x400.jpg",
+              title: "Dogechain"
+            )
+          }
+        )
       }
       .listStyle(.plain)
       .navigationTitle("dApps / Protocol")

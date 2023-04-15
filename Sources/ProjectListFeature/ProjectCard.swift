@@ -4,7 +4,7 @@ import ProgressAsyncImage
 struct ProjectCard: View {
   let imageUrl: String
   let title: String
-  let description: String
+  var description: String? = nil
   
   var body: some View {
     HStack(spacing: 16) {
@@ -17,7 +17,9 @@ struct ProjectCard: View {
         Text(title)
           .font(.headline)
         
-        Text(description)
+        if let description = description {
+          Text(description)
+        }
       }
     }
     .frame(height: 72)
