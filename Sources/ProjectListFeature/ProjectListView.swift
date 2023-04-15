@@ -13,11 +13,9 @@ public struct ProjectListView: View {
     WithViewStore(store, observe: { $0 }) { viewStore in
       List {
         NavigationLink(
-          destination: {
-            BalanceView(
-              store: store.scope(state: \.balance, action: ProjectListReducer.Action.balance)
-            )
-          },
+          destination: BalanceView(
+            store: store.scope(state: \.balance, action: ProjectListReducer.Action.balance)
+          ),
           label: {
             ProjectCard(
               imageUrl: "https://pbs.twimg.com/profile_images/1610359829763162112/UZjRjq0q_400x400.png",
