@@ -37,7 +37,7 @@ public struct LensFollowingReducer: ReducerProtocol {
           models.append(
             WidgetModel(
               title: "Lens Following \(Date())",
-              type: .lensFollowers(32)
+              type: .lensFollowing(32)
             )
           )
           let encoder = JSONEncoder()
