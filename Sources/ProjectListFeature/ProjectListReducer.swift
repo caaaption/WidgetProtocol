@@ -3,6 +3,7 @@ import QuickNodeBalanceFeature
 import PushLinkFeature
 import PushNotificationFeature
 import LensLinkFeature
+import LensFollowerFeature
 
 public struct ProjectListReducer: ReducerProtocol {
   public init() {}
@@ -12,6 +13,7 @@ public struct ProjectListReducer: ReducerProtocol {
     public var link = PushLinkReducer.State()
     public var notification = PushNotificationReducer.State()
     public var lensLink = LensLinkReducer.State()
+    public var lensFollower = LensFollowerReducer.State()
     
     @BindingState public var searchable = ""
     public init() {}
@@ -22,6 +24,7 @@ public struct ProjectListReducer: ReducerProtocol {
     case link(PushLinkReducer.Action)
     case notification(PushNotificationReducer.Action)
     case lensLink(LensLinkReducer.Action)
+    case lensFollower(LensFollowerReducer.Action)
 
     case task
     case refreshable
@@ -42,9 +45,12 @@ public struct ProjectListReducer: ReducerProtocol {
     Scope(state: \.lensLink, action: /Action.lensLink) {
       LensLinkReducer()
     }
+    Scope(state: \.lensFollower, action: /Action.lensFollower) {
+      LensFollowerReducer()
+    }
     Reduce { state, action in
       switch action {
-      case .balance, .link, .notification, .lensLink:
+      case .balance, .link, .notification, .lensLink, .lensFollower:
         return EffectTask.none
 
       case .task:

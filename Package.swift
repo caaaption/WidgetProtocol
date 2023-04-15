@@ -31,6 +31,7 @@ var package = Package(
       "PushNotificationFeature",
       "QuickNodeBalanceFeature",
       "LensLinkFeature",
+      "LensFollowerFeature",
     ]),
     .target(name: "ProjectFeature", dependencies: [
       "ProgressAsyncImage",
@@ -75,10 +76,14 @@ package.targets.append(contentsOf: [
 
 package.products.append(contentsOf: [
   .library(name: "LensLinkFeature", targets: ["LensLinkFeature"]),
+  .library(name: "LensFollowerFeature", targets: ["LensFollowerFeature"]),
 ])
 package.targets.append(contentsOf: [
   .target(name: "LensLinkFeature", dependencies: [
     "UserDefaultsClient",
+    .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+  ]),
+  .target(name: "LensFollowerFeature", dependencies: [
     .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
   ]),
 ])

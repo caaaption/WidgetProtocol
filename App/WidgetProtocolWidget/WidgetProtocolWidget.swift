@@ -149,6 +149,11 @@ struct WidgetProtocolWidgetEntryView : View {
         .widgetURL(
           URL(string: "https://lenster.xyz/u/" + username)
         )
+    case let .lensFollowers(count):
+      CountView(
+        title: "Follower Count",
+        count: count
+      )
     default:
       ProgressView()
     }

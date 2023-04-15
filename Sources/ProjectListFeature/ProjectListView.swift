@@ -4,6 +4,7 @@ import QuickNodeBalanceFeature
 import PushLinkFeature
 import PushNotificationFeature
 import LensLinkFeature
+import LensFollowerFeature
 
 public struct ProjectListView: View {
   let store: StoreOf<ProjectListReducer>
@@ -61,6 +62,18 @@ public struct ProjectListView: View {
             ProjectCard(
               imageUrl: "https://pbs.twimg.com/profile_images/1611047066746093593/cd3kFbZ4_400x400.jpg",
               title: "Link for Lens Protocol"
+            )
+          }
+        )
+        
+        NavigationLink(
+          destination: LensFollowerView(
+            store: store.scope(state: \.lensFollower, action: ProjectListReducer.Action.lensFollower)
+          ),
+          label: {
+            ProjectCard(
+              imageUrl: "https://pbs.twimg.com/profile_images/1611047066746093593/cd3kFbZ4_400x400.jpg",
+              title: "Follower for Lens Protocol"
             )
           }
         )

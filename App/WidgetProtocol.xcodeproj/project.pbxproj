@@ -28,6 +28,7 @@
 		B78CD22F29EB143E008B8775 /* BalanceWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78CD22A29EB031B008B8775 /* BalanceWidgetView.swift */; };
 		B78CD23529EB33FE008B8775 /* PushLinkWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78CD23329EB33FC008B8775 /* PushLinkWidgetView.swift */; };
 		B78CD23729EB567D008B8775 /* LensLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78CD23629EB567D008B8775 /* LensLinkView.swift */; };
+		B78CD23929EB5C8A008B8775 /* CountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78CD23829EB5C8A008B8775 /* CountView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		B78CD22A29EB031B008B8775 /* BalanceWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceWidgetView.swift; sourceTree = "<group>"; };
 		B78CD23329EB33FC008B8775 /* PushLinkWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushLinkWidgetView.swift; sourceTree = "<group>"; };
 		B78CD23629EB567D008B8775 /* LensLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LensLinkView.swift; sourceTree = "<group>"; };
+		B78CD23829EB5C8A008B8775 /* CountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 				B78CD22A29EB031B008B8775 /* BalanceWidgetView.swift */,
 				B78CD23329EB33FC008B8775 /* PushLinkWidgetView.swift */,
 				B78CD23629EB567D008B8775 /* LensLinkView.swift */,
+				B78CD23829EB5C8A008B8775 /* CountView.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B78CD23529EB33FE008B8775 /* PushLinkWidgetView.swift in Sources */,
+				B78CD23929EB5C8A008B8775 /* CountView.swift in Sources */,
 				B78CD22F29EB143E008B8775 /* BalanceWidgetView.swift in Sources */,
 				B78CD23729EB567D008B8775 /* LensLinkView.swift in Sources */,
 				B72F8B6A29EAAFCD00798B73 /* WidgetProtocolWidgetBundle.swift in Sources */,
