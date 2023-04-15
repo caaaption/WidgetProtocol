@@ -12,14 +12,6 @@
 		B715DC3829E9B62000531E39 /* QuickNodeBalanceIntents.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B715DC3029E9B61F00531E39 /* QuickNodeBalanceIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B715DC4C29EA3BA900531E39 /* QuickNodeBalance.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = B75A25D729E6C39C0089DB2B /* QuickNodeBalance.intentdefinition */; };
 		B715DC4D29EA3C8000531E39 /* QuickNodeBalance.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = B75A25D729E6C39C0089DB2B /* QuickNodeBalance.intentdefinition */; };
-		B715DC5429EA474A00531E39 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B75A25CE29E6C39C0089DB2B /* WidgetKit.framework */; };
-		B715DC5529EA474A00531E39 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B75A25D029E6C39C0089DB2B /* SwiftUI.framework */; };
-		B715DC5829EA474A00531E39 /* QuickNodeNFTWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B715DC5729EA474A00531E39 /* QuickNodeNFTWidgetBundle.swift */; };
-		B715DC5A29EA474A00531E39 /* QuickNodeNFTWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B715DC5929EA474A00531E39 /* QuickNodeNFTWidget.swift */; };
-		B715DC5D29EA474B00531E39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B715DC5C29EA474B00531E39 /* Assets.xcassets */; };
-		B715DC5F29EA474B00531E39 /* QuickNodeNFTWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = B715DC5B29EA474A00531E39 /* QuickNodeNFTWidget.intentdefinition */; };
-		B715DC6029EA474B00531E39 /* QuickNodeNFTWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = B715DC5B29EA474A00531E39 /* QuickNodeNFTWidget.intentdefinition */; };
-		B715DC6329EA474B00531E39 /* QuickNodeNFTWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B715DC5329EA474A00531E39 /* QuickNodeNFTWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B75A25B829E3A2A20089DB2B /* WidgetProtocolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75A25B729E3A2A20089DB2B /* WidgetProtocolApp.swift */; };
 		B75A25BC29E3A2A20089DB2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B75A25BB29E3A2A20089DB2B /* Assets.xcassets */; };
 		B75A25BF29E3A2A20089DB2B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B75A25BE29E3A2A20089DB2B /* Preview Assets.xcassets */; };
@@ -42,13 +34,6 @@
 			remoteGlobalIDString = B715DC2F29E9B61F00531E39;
 			remoteInfo = QuickNodeBalanceIntents;
 		};
-		B715DC6129EA474B00531E39 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B75A25AC29E3A2A20089DB2B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B715DC5229EA474A00531E39;
-			remoteInfo = QuickNodeNFTWidgetExtension;
-		};
 		B75A25DD29E6C39D0089DB2B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B75A25AC29E3A2A20089DB2B /* Project object */;
@@ -67,7 +52,6 @@
 			files = (
 				B75A25DF29E6C39D0089DB2B /* QuickNodeBalanceExtension.appex in Embed Foundation Extensions */,
 				B715DC3829E9B62000531E39 /* QuickNodeBalanceIntents.appex in Embed Foundation Extensions */,
-				B715DC6329EA474B00531E39 /* QuickNodeNFTWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,12 +67,6 @@
 		B715DC3329E9B62000531E39 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		B715DC3529E9B62000531E39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B715DC4E29EA43F900531E39 /* QuickNodeBalanceIntents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuickNodeBalanceIntents.entitlements; sourceTree = "<group>"; };
-		B715DC5329EA474A00531E39 /* QuickNodeNFTWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = QuickNodeNFTWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		B715DC5729EA474A00531E39 /* QuickNodeNFTWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickNodeNFTWidgetBundle.swift; sourceTree = "<group>"; };
-		B715DC5929EA474A00531E39 /* QuickNodeNFTWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickNodeNFTWidget.swift; sourceTree = "<group>"; };
-		B715DC5B29EA474A00531E39 /* QuickNodeNFTWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = QuickNodeNFTWidget.intentdefinition; sourceTree = "<group>"; };
-		B715DC5C29EA474B00531E39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B715DC5E29EA474B00531E39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B75A25B429E3A2A20089DB2B /* WidgetProtocol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WidgetProtocol.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B75A25B729E3A2A20089DB2B /* WidgetProtocolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetProtocolApp.swift; sourceTree = "<group>"; };
 		B75A25BB29E3A2A20089DB2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,15 +88,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B715DC5029EA474A00531E39 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B715DC5529EA474A00531E39 /* SwiftUI.framework in Frameworks */,
-				B715DC5429EA474A00531E39 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,18 +123,6 @@
 			path = QuickNodeBalanceIntents;
 			sourceTree = "<group>";
 		};
-		B715DC5629EA474A00531E39 /* QuickNodeNFTWidget */ = {
-			isa = PBXGroup;
-			children = (
-				B715DC5729EA474A00531E39 /* QuickNodeNFTWidgetBundle.swift */,
-				B715DC5929EA474A00531E39 /* QuickNodeNFTWidget.swift */,
-				B715DC5B29EA474A00531E39 /* QuickNodeNFTWidget.intentdefinition */,
-				B715DC5C29EA474B00531E39 /* Assets.xcassets */,
-				B715DC5E29EA474B00531E39 /* Info.plist */,
-			);
-			path = QuickNodeNFTWidget;
-			sourceTree = "<group>";
-		};
 		B75A25AB29E3A2A20089DB2B = {
 			isa = PBXGroup;
 			children = (
@@ -175,7 +132,6 @@
 				B75A25B629E3A2A20089DB2B /* WidgetProtocol */,
 				B75A25D229E6C39C0089DB2B /* QuickNodeBalance */,
 				B715DC3229E9B62000531E39 /* QuickNodeBalanceIntents */,
-				B715DC5629EA474A00531E39 /* QuickNodeNFTWidget */,
 				B75A25B529E3A2A20089DB2B /* Products */,
 				B75A25C629E3A2ED0089DB2B /* Frameworks */,
 			);
@@ -187,7 +143,6 @@
 				B75A25B429E3A2A20089DB2B /* WidgetProtocol.app */,
 				B75A25CD29E6C39C0089DB2B /* QuickNodeBalanceExtension.appex */,
 				B715DC3029E9B61F00531E39 /* QuickNodeBalanceIntents.appex */,
-				B715DC5329EA474A00531E39 /* QuickNodeNFTWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -254,23 +209,6 @@
 			productReference = B715DC3029E9B61F00531E39 /* QuickNodeBalanceIntents.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		B715DC5229EA474A00531E39 /* QuickNodeNFTWidgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B715DC6429EA474B00531E39 /* Build configuration list for PBXNativeTarget "QuickNodeNFTWidgetExtension" */;
-			buildPhases = (
-				B715DC4F29EA474A00531E39 /* Sources */,
-				B715DC5029EA474A00531E39 /* Frameworks */,
-				B715DC5129EA474A00531E39 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = QuickNodeNFTWidgetExtension;
-			productName = QuickNodeNFTWidgetExtension;
-			productReference = B715DC5329EA474A00531E39 /* QuickNodeNFTWidgetExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		B75A25B329E3A2A20089DB2B /* WidgetProtocol */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B75A25C229E3A2A20089DB2B /* Build configuration list for PBXNativeTarget "WidgetProtocol" */;
@@ -285,7 +223,6 @@
 			dependencies = (
 				B75A25DE29E6C39D0089DB2B /* PBXTargetDependency */,
 				B715DC3729E9B62000531E39 /* PBXTargetDependency */,
-				B715DC6229EA474B00531E39 /* PBXTargetDependency */,
 			);
 			name = WidgetProtocol;
 			packageProductDependencies = (
@@ -329,9 +266,6 @@
 					B715DC2F29E9B61F00531E39 = {
 						CreatedOnToolsVersion = 14.3;
 					};
-					B715DC5229EA474A00531E39 = {
-						CreatedOnToolsVersion = 14.3;
-					};
 					B75A25B329E3A2A20089DB2B = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -356,7 +290,6 @@
 				B75A25B329E3A2A20089DB2B /* WidgetProtocol */,
 				B75A25CC29E6C39C0089DB2B /* QuickNodeBalanceExtension */,
 				B715DC2F29E9B61F00531E39 /* QuickNodeBalanceIntents */,
-				B715DC5229EA474A00531E39 /* QuickNodeNFTWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -366,14 +299,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B715DC5129EA474A00531E39 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B715DC5D29EA474B00531E39 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,21 +331,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B715DC4F29EA474A00531E39 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B715DC5F29EA474B00531E39 /* QuickNodeNFTWidget.intentdefinition in Sources */,
-				B715DC5A29EA474A00531E39 /* QuickNodeNFTWidget.swift in Sources */,
-				B715DC5829EA474A00531E39 /* QuickNodeNFTWidgetBundle.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B75A25B029E3A2A20089DB2B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B715DC6029EA474B00531E39 /* QuickNodeNFTWidget.intentdefinition in Sources */,
 				B75A25B829E3A2A20089DB2B /* WidgetProtocolApp.swift in Sources */,
 				B715DC4D29EA3C8000531E39 /* QuickNodeBalance.intentdefinition in Sources */,
 			);
@@ -443,11 +357,6 @@
 			isa = PBXTargetDependency;
 			target = B715DC2F29E9B61F00531E39 /* QuickNodeBalanceIntents */;
 			targetProxy = B715DC3629E9B62000531E39 /* PBXContainerItemProxy */;
-		};
-		B715DC6229EA474B00531E39 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B715DC5229EA474A00531E39 /* QuickNodeNFTWidgetExtension */;
-			targetProxy = B715DC6129EA474B00531E39 /* PBXContainerItemProxy */;
 		};
 		B75A25DE29E6C39D0089DB2B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -503,62 +412,6 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.caaaption.app.WidgetProtocol.QuickNodeBalanceIntents;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		B715DC6529EA474B00531E39 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AV9FQ3YF56;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = QuickNodeNFTWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = QuickNodeNFTWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.caaaption.app.WidgetProtocol.QuickNodeNFTWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		B715DC6629EA474B00531E39 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AV9FQ3YF56;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = QuickNodeNFTWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = QuickNodeNFTWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.caaaption.app.WidgetProtocol.QuickNodeNFTWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -813,15 +666,6 @@
 			buildConfigurations = (
 				B715DC3A29E9B62000531E39 /* Debug */,
 				B715DC3B29E9B62000531E39 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B715DC6429EA474B00531E39 /* Build configuration list for PBXNativeTarget "QuickNodeNFTWidgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B715DC6529EA474B00531E39 /* Debug */,
-				B715DC6629EA474B00531E39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
