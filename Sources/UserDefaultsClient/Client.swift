@@ -23,6 +23,7 @@ public struct WidgetModel: Codable, Equatable {
     case notification
     case lens(String)
     case lensFollowers(Int)
+    case lensFollowing(Int)
   }
   
   public init(

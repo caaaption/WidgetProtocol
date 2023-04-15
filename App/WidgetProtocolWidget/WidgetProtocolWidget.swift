@@ -14,6 +14,7 @@ public struct WidgetModel: Codable {
     case notification
     case lens(String)
     case lensFollowers(Int)
+    case lensFollowing(Int)
   }
 }
 
@@ -51,11 +52,6 @@ struct Provider: IntentTimelineProvider {
       )
       return
     }
-//  case balance(String)
-//  case link(String)
-//  case notification
-//  case lens(String)
-//  case lensFollowers(Int)
     switch model.type {
     case let .balance(address):
       Task {
@@ -100,6 +96,14 @@ struct Provider: IntentTimelineProvider {
           configuration: configuration
         )
       )
+    case let .lensFollowing(count):
+      completion(
+        SimpleEntry(
+          date: .init(),
+          type: .lensFollowing(count),
+          configuration: configuration
+        )
+      )
     }
   }
   
@@ -126,6 +130,7 @@ struct SimpleEntry: TimelineEntry {
     case notification
     case lens(String)
     case lensFollowers(Int)
+    case lensFollowing(Int)
   }
 }
 
@@ -152,6 +157,11 @@ struct WidgetProtocolWidgetEntryView : View {
     case let .lensFollowers(count):
       CountView(
         title: "Follower Count",
+        count: count
+      )
+    case let .lensFollowing(count):
+      CountView(
+        title: "Following Count",
         count: count
       )
     default:

@@ -10,6 +10,7 @@ public struct WidgetModel: Codable {
     case notification
     case lens(String)
     case lensFollowers(Int)
+    case lensFollowing(Int)
   }
 }
 
