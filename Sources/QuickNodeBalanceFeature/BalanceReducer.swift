@@ -1,3 +1,4 @@
+import Foundation
 import UserDefaultsClient
 import ComposableArchitecture
 
@@ -21,15 +22,31 @@ public struct BalanceReducer: ReducerProtocol {
   public var body: some ReducerProtocol<State, Action> {
     BindingReducer()
     Reduce { state, action in
+      @Sendable func getModels() -> [WidgetModel] {
+        let decoder = JSONDecoder()
+        guard
+          let json = userDefaults.string("widget-models"),
+          let data = json.data(using: .utf8),
+          let models = try? decoder.decode([WidgetModel].self, from: data)
+        else {
+          return []
+        }
+        return models
+      }
       switch action {
       case .addWidget:
         return EffectTask.run { [address = state.address] send in
-          var addresses = userDefaults.stringArray("quick-node-balance-addresses") ?? []
-          print("[old]: \(addresses)")
-          if !addresses.contains(address) {
-            addresses.append(address)
-          }
-          await userDefaults.setArray(addresses, "quick-node-balance-addresses")
+          var models = getModels()
+          models.append(
+            WidgetModel(
+              title: "balance \(Date())",
+              type: .balance(address)
+            )
+          )
+          let encoder = JSONEncoder()
+          let data = try! encoder.encode(models)
+          let json = String(data: data, encoding: .utf8)!
+          await userDefaults.setString(json, "widget-models")
           await send(.task)
         }
         
@@ -37,7 +54,24 @@ public struct BalanceReducer: ReducerProtocol {
         return EffectTask.none
         
       case .task:
-        state.addresses = userDefaults.stringArray("quick-node-balance-addresses") ?? []
+        let models = getModels()
+        let addresses = models.filter { model in
+          switch model.type {
+          case .balance:
+            return true
+          case .art:
+            return false
+          }
+        }.map { model in
+          switch model.type {
+          case let .balance(address):
+            return address
+          default:
+            return ""
+          }
+        }
+        print(addresses)
+        state.addresses = addresses
         return EffectTask.none.animation()
       }
     }

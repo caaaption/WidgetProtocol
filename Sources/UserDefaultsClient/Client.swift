@@ -9,7 +9,24 @@ extension DependencyValues {
 }
 
 public struct UserDefaultsClient {
-  public var stringArray: @Sendable (String) -> Array<String>?
-  public var setArray: @Sendable (Array<String>, String) async -> Void
+  public var string: @Sendable (String) -> String?
+  public var setString: @Sendable (String, String) async -> Void
 }
 
+public struct WidgetModel: Codable, Equatable {
+  public let title: String
+  public let type: WidgetType
+  
+  public enum WidgetType: Codable, Equatable {
+    case balance(String)
+    case art(Data)
+  }
+  
+  public init(
+    title: String,
+    type: WidgetType
+  ) {
+    self.title = title
+    self.type = type
+  }
+}
