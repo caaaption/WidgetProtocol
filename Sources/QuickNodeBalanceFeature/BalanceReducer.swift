@@ -70,7 +70,6 @@ public struct BalanceReducer: ReducerProtocol {
             return ""
           }
         }
-        print(addresses)
         state.addresses = addresses
         return EffectTask.none.animation()
       }

@@ -19,7 +19,11 @@ public struct ProjectListView: View {
             )
           },
           label: {
-            ProjectCard()
+            ProjectCard(
+              imageUrl: "https://pbs.twimg.com/profile_images/1610359829763162112/UZjRjq0q_400x400.png",
+              title: "balance for QuickNode",
+              description: "Please select the address to display"
+            )
           }
         )
       }

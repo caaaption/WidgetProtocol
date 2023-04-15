@@ -2,29 +2,24 @@ import SwiftUI
 import ProgressAsyncImage
 
 struct ProjectCard: View {
+  let imageUrl: String
+  let title: String
+  let description: String
+  
   var body: some View {
     HStack(spacing: 16) {
       ProgressAsyncImage(
-        "https://pbs.twimg.com/profile_images/1610359829763162112/UZjRjq0q_400x400.png",
+        imageUrl,
         content: { $0.frame(width: 48, height: 48).cornerRadius(12) }
       )
       
       VStack(alignment: .leading, spacing: 0) {
-        Text("QuickNode")
+        Text(title)
           .font(.headline)
         
-        Text("Please select the address to display")
+        Text(description)
       }
     }
     .frame(height: 72)
-  }
-}
-
-struct ProjectCardPreviews: PreviewProvider {
-  static var previews: some View {
-    List {
-      ProjectCard()
-    }
-    .listStyle(.plain)
   }
 }

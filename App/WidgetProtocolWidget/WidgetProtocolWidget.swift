@@ -105,7 +105,7 @@ struct WidgetProtocolWidgetEntryView : View {
         balance: balance
       )
     case let .art(data):
-      Text(data.description)
+      ArtWidgetView(data: data)
     default:
       ProgressView()
     }
