@@ -9,9 +9,22 @@ struct ProjectCard: View {
         content: { $0.frame(width: 48, height: 48).cornerRadius(12) }
       )
       
-      Text("QuickNode")
-        .font(.headline)
+      VStack(alignment: .leading, spacing: 0) {
+        Text("QuickNode")
+          .font(.headline)
+        
+        Text("Please select the address to display")
+      }
     }
     .frame(height: 72)
+  }
+}
+
+struct ProjectCardPreviews: PreviewProvider {
+  static var previews: some View {
+    List {
+      ProjectCard()
+    }
+    .listStyle(.plain)
   }
 }

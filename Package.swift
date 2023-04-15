@@ -45,6 +45,7 @@ package.targets.append(contentsOf: [
     .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
   ]),
   .target(name: "QuickNodeBalanceFeature", dependencies: [
+    "UserDefaultsClient",
     .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
   ]),
 ])

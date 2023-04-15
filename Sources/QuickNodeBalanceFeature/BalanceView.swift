@@ -3,6 +3,11 @@ import SwiftUI
 
 public struct BalanceView: View {
   let store: StoreOf<BalanceReducer>
+  
+  let columns = [
+    GridItem(.flexible(), spacing: 20),
+    GridItem(.flexible(), spacing: 20),
+  ]
 
   public init(store: StoreOf<BalanceReducer>) {
     self.store = store
@@ -10,13 +15,18 @@ public struct BalanceView: View {
 
   public var body: some View {
     WithViewStore(store, observe: { $0 }) { viewStore in
-      VStack(spacing: 8) {
-        QuickNodeBalanceView(
-          address: viewStore.address,
-          balance: 0.9
-        )
+      VStack(spacing: 16) {
         
-        Spacer()
+        ScrollView {
+          LazyVGrid(columns: columns) {
+            ForEach(viewStore.addresses, id: \.self) { address in
+              QuickNodeBalanceView(
+                address: address,
+                balance: 1.0
+              )
+            }
+          }
+        }
         
         TextField(
           "address",
@@ -36,8 +46,9 @@ public struct BalanceView: View {
         .background(viewStore.address.isEmpty ? Color.gray : Color.blue)
         .cornerRadius(50 / 2)
       }
-      .padding(.top, 21)
       .padding(.horizontal, 24)
+      .padding(.bottom, 24)
+      .task { await viewStore.send(.task).finish() }
     }
   }
 }
