@@ -25,9 +25,6 @@ public struct PushLinkReducer: ReducerProtocol {
         return EffectTask.none
         
       case .addWidget:
-        if !state.link.contains("https://app.push.org/chat/") {
-          return EffectTask.none
-        }
         return EffectTask.run { [link = state.link] send in
           let decoder = JSONDecoder()
           guard
