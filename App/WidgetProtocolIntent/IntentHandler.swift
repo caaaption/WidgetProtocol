@@ -1,23 +1,19 @@
 import Intents
 
-public enum WidgetModel: Codable {
-  case balance(String)
-  case art(Data)
+public struct WidgetModel: Codable {
+  let title: String
+  let type: WidgetType
   
-  public var rawValue: NSString {
-    switch self {
-    case let .balance(address):
-      return address.prefix(6) + " for balance"
-    case .art:
-      return "NFT Art"
-    }
+  public enum WidgetType: Codable {
+    case balance(String)
+    case art(Data)
   }
 }
 
 class IntentHandler: INExtension, ConfigurationIntentHandling {
   let userDefaults = UserDefaults(suiteName: "group.com.caaaption.app.WidgetProtocol")!
 
-  func provideWidgetTypeOptionsCollection(
+  func provideTitleOptionsCollection(
     for intent: ConfigurationIntent,
     with completion: @escaping (INObjectCollection<NSString>?, Error?) -> Void
   ) {
@@ -31,7 +27,8 @@ class IntentHandler: INExtension, ConfigurationIntentHandling {
       completion(nil, nil)
       return
     }
-    let allNameIdentifiers = INObjectCollection(items: models.map(\.rawValue))
+    let items = models.map(\.title).map { $0 as NSString }
+    let allNameIdentifiers = INObjectCollection(items: items)
     completion(allNameIdentifiers, nil)
   }
   

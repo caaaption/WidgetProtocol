@@ -26,7 +26,7 @@
 			<key>INIntentIneligibleForSuggestions</key>
 			<true/>
 			<key>INIntentLastParameterTag</key>
-			<integer>3</integer>
+			<integer>7</integer>
 			<key>INIntentName</key>
 			<string>Configuration</string>
 			<key>INIntentParameters</key>
@@ -35,9 +35,9 @@
 					<key>INIntentParameterConfigurable</key>
 					<true/>
 					<key>INIntentParameterDisplayName</key>
-					<string>Widget Type</string>
+					<string>Title</string>
 					<key>INIntentParameterDisplayNameID</key>
-					<string>c3G4cG</string>
+					<string>5kZUCZ</string>
 					<key>INIntentParameterDisplayPriority</key>
 					<integer>1</integer>
 					<key>INIntentParameterMetadata</key>
@@ -45,19 +45,19 @@
 						<key>INIntentParameterMetadataCapitalization</key>
 						<string>Sentences</string>
 						<key>INIntentParameterMetadataDefaultValueID</key>
-						<string>ONk1R2</string>
+						<string>h3FoDW</string>
 					</dict>
 					<key>INIntentParameterName</key>
-					<string>widgetType</string>
+					<string>title</string>
 					<key>INIntentParameterPromptDialogs</key>
 					<array>
 						<dict>
 							<key>INIntentParameterPromptDialogCustom</key>
 							<true/>
 							<key>INIntentParameterPromptDialogFormatString</key>
-							<string>Select the widget to display</string>
+							<string>select widget</string>
 							<key>INIntentParameterPromptDialogFormatStringID</key>
-							<string>LjFosV</string>
+							<string>py1kTA</string>
 							<key>INIntentParameterPromptDialogType</key>
 							<string>Configuration</string>
 						</dict>
@@ -71,9 +71,9 @@
 							<key>INIntentParameterPromptDialogCustom</key>
 							<true/>
 							<key>INIntentParameterPromptDialogFormatString</key>
-							<string>There are ${count} options matching ‘${widgetType}’.</string>
+							<string>There are ${count} options matching ‘${title}’.</string>
 							<key>INIntentParameterPromptDialogFormatStringID</key>
-							<string>akQFlL</string>
+							<string>9sKPGr</string>
 							<key>INIntentParameterPromptDialogType</key>
 							<string>DisambiguationIntroduction</string>
 						</dict>
@@ -81,9 +81,9 @@
 							<key>INIntentParameterPromptDialogCustom</key>
 							<true/>
 							<key>INIntentParameterPromptDialogFormatString</key>
-							<string>Just to confirm, you wanted ‘${widgetType}’?</string>
+							<string>Just to confirm, you wanted ‘${title}’?</string>
 							<key>INIntentParameterPromptDialogFormatStringID</key>
-							<string>1KgUB0</string>
+							<string>FLF3ID</string>
 							<key>INIntentParameterPromptDialogType</key>
 							<string>Confirmation</string>
 						</dict>
@@ -91,7 +91,7 @@
 					<key>INIntentParameterSupportsDynamicEnumeration</key>
 					<true/>
 					<key>INIntentParameterTag</key>
-					<integer>3</integer>
+					<integer>7</integer>
 					<key>INIntentParameterType</key>
 					<string>String</string>
 				</dict>
