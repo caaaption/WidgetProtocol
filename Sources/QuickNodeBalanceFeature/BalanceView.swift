@@ -16,7 +16,6 @@ public struct BalanceView: View {
   public var body: some View {
     WithViewStore(store, observe: { $0 }) { viewStore in
       VStack(spacing: 16) {
-        
         ScrollView {
           LazyVGrid(columns: columns) {
             ForEach(viewStore.addresses, id: \.self) { address in
