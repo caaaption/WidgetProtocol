@@ -1,11 +1,13 @@
 import ComposableArchitecture
 import QuickNodeBalanceFeature
+import PushLinkFeature
 
 public struct ProjectListReducer: ReducerProtocol {
   public init() {}
 
   public struct State: Equatable {
     public var balance = BalanceReducer.State()
+    public var link = PushLinkReducer.State()
     
     @BindingState public var searchable = ""
     public init() {}
@@ -13,6 +15,7 @@ public struct ProjectListReducer: ReducerProtocol {
 
   public enum Action: Equatable, BindableAction {
     case balance(BalanceReducer.Action)
+    case link(PushLinkReducer.Action)
 
     case task
     case refreshable
@@ -24,9 +27,12 @@ public struct ProjectListReducer: ReducerProtocol {
     Scope(state: \.balance, action: /Action.balance) {
       BalanceReducer()
     }
+    Scope(state: \.link, action: /Action.link) {
+      PushLinkReducer()
+    }
     Reduce { state, action in
       switch action {
-      case .balance:
+      case .balance, .link:
         return EffectTask.none
 
       case .task:

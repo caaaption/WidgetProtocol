@@ -59,7 +59,7 @@ public struct BalanceReducer: ReducerProtocol {
           switch model.type {
           case .balance:
             return true
-          case .art:
+          default:
             return false
           }
         }.map { model in

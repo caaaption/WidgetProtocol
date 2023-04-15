@@ -1,6 +1,7 @@
 import SwiftUI
 import ComposableArchitecture
 import QuickNodeBalanceFeature
+import PushLinkFeature
 
 public struct ProjectListView: View {
   let store: StoreOf<ProjectListReducer>
@@ -19,8 +20,21 @@ public struct ProjectListView: View {
           label: {
             ProjectCard(
               imageUrl: "https://pbs.twimg.com/profile_images/1610359829763162112/UZjRjq0q_400x400.png",
-              title: "balance for QuickNode",
+              title: "Balance for QuickNode",
               description: "Please select the address to display"
+            )
+          }
+        )
+        
+        NavigationLink(
+          destination: PushLinkView(
+            store: store.scope(state: \.link, action: ProjectListReducer.Action.link)
+          ),
+          label: {
+            ProjectCard(
+              imageUrl: "https://pbs.twimg.com/profile_images/1616110831975931909/5tUeoUR__400x400.png",
+              title: "Link for Push Protocol",
+              description: "Open the configured chat window"
             )
           }
         )
