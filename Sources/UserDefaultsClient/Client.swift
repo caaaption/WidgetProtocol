@@ -12,4 +12,3 @@ public struct UserDefaultsClient {
   public var stringArray: @Sendable (String) -> Array<String>?
   public var setArray: @Sendable (Array<String>, String) async -> Void
 }
-
