@@ -3,7 +3,6 @@ import SwiftUI
 
 public struct BalanceView: View {
   let store: StoreOf<BalanceReducer>
-  
   let columns = [
     GridItem(.flexible(), spacing: 20),
     GridItem(.flexible(), spacing: 20),
