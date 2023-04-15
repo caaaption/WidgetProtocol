@@ -33,5 +33,8 @@ public struct AppView: View {
     NavigationView {
       ProjectListView(store: store.scope(state: \.projectList, action: AppReducer.Action.projectList))
     }
+    .onOpenURL { url in
+      UIApplication.shared.open(url)
+    }
   }
 }

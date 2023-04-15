@@ -106,6 +106,9 @@ struct WidgetProtocolWidgetEntryView : View {
       )
     case let .link(link):
       PushLinkWidgetView(link: link)
+        .widgetURL(
+          URL(string: link)
+        )
     default:
       ProgressView()
     }
