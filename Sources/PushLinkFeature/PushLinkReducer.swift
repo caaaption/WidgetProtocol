@@ -6,7 +6,7 @@ public struct PushLinkReducer: ReducerProtocol {
   public init() {}
   
   public struct State: Equatable {
-    @BindingState var link = ""
+    @BindingState var address = ""
     public init() {}
   }
   
@@ -25,7 +25,7 @@ public struct PushLinkReducer: ReducerProtocol {
         return EffectTask.none
         
       case .addWidget:
-        return EffectTask.run { [link = state.link] send in
+        return EffectTask.run { [address = state.address] send in
           let decoder = JSONDecoder()
           guard
             let json = userDefaults.string("widget-models"),
@@ -37,7 +37,7 @@ public struct PushLinkReducer: ReducerProtocol {
           models.append(
             WidgetModel(
               title: "Push Link \(Date())",
-              type: .link(link)
+              type: .link("https://app.push.org/chat/\(address)")
             )
           )
           let encoder = JSONEncoder()

@@ -13,7 +13,7 @@ public struct PushLinkView: View {
       VStack {
         Spacer()
         
-        TextField("Link", text: viewStore.binding(\.$link))
+        TextField("Address", text: viewStore.binding(\.$address))
         
         Spacer()
         
