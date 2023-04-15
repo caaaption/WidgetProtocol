@@ -8,7 +8,8 @@ extension QuickNodeClient: DependencyKey {
     let baseUrl = Config.baseUrl
     let session = QuickNodeClientSession(baseUrl: baseUrl)
     return Self(
-      getBalance: { try await session.getBalance(address: $0) }
+      getBalance: { try await session.getBalance(address: $0) },
+      getNfts: { try await session.getNfts(address: $0) }
     )
   }
 }
@@ -42,6 +43,28 @@ actor QuickNodeClientSession {
     let response = try JSONDecoder().decode(BalanceResponse.self, from: data)
     let value = Int(strtoul(response.result, nil, 16))
     return Converter.toEther(wei: value)
+  }
+  
+  func getNfts(address: String) async throws -> [String] {
+    var urlRequest = URLRequest(url: baseUrl)
+    urlRequest.httpMethod = "POST"
+    urlRequest.allHTTPHeaderFields = [
+      "Content-Type": "application/json"
+    ]
+    urlRequest.httpBody = """
+    {
+      "method": "qn_fetchNFTs",
+      "params": [
+        "wallet": "\(address)",
+      ],
+      "id": 1,
+      "jsonrpc": "2.0"
+    }
+    """.data(using: .utf8)!
+    let (data, _) = try await apiRequest(urlRequest: urlRequest)
+    let response = String(data: data, encoding: .utf8)!
+    print(response)
+    return []
   }
 }
 

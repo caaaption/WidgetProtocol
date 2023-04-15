@@ -19,7 +19,7 @@ public struct WidgetModel: Codable, Equatable {
   
   public enum WidgetType: Codable, Equatable {
     case balance(String)
-    case art(Data)
+    case link(String)
   }
   
   public init(

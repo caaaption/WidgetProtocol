@@ -27,6 +27,7 @@ var package = Package(
     ]),
     .target(name: "ProjectListFeature", dependencies: [
       "ProjectFeature",
+      "PushLinkFeature",
       "QuickNodeBalanceFeature",
     ]),
     .target(name: "ProjectFeature", dependencies: [
@@ -39,7 +40,6 @@ var package = Package(
 package.products.append(contentsOf: [
   .library(name: "QuickNodeClient", targets: ["QuickNodeClient"]),
   .library(name: "QuickNodeBalanceFeature", targets: ["QuickNodeBalanceFeature"]),
-  .library(name: "QuickNodeNFTFeature", targets: ["QuickNodeNFTFeature"]),
 ])
 package.targets.append(contentsOf: [
   .target(name: "QuickNodeClient", dependencies: [
@@ -49,7 +49,13 @@ package.targets.append(contentsOf: [
     "UserDefaultsClient",
     .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
   ]),
-  .target(name: "QuickNodeNFTFeature", dependencies: [
+])
+
+package.products.append(contentsOf: [
+  .library(name: "PushLinkFeature", targets: ["PushLinkFeature"]),
+])
+package.targets.append(contentsOf: [
+  .target(name: "PushLinkFeature", dependencies: [
     "UserDefaultsClient",
     .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
   ])

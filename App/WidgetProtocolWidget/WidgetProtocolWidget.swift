@@ -10,7 +10,7 @@ public struct WidgetModel: Codable {
   
   public enum WidgetType: Codable {
     case balance(String)
-    case art(Data)
+    case link(String)
   }
 }
 
@@ -60,11 +60,11 @@ struct Provider: IntentTimelineProvider {
           )
         )
       }
-    case let .art(data):
+    case let .link(link):
       completion(
         SimpleEntry(
           date: .init(),
-          type: .art(data),
+          type: .link(link),
           configuration: configuration
         )
       )
@@ -90,7 +90,7 @@ struct SimpleEntry: TimelineEntry {
   
   enum DisplayType {
     case balance(String, Decimal)
-    case art(Data)
+    case link(String)
   }
 }
 
@@ -104,8 +104,11 @@ struct WidgetProtocolWidgetEntryView : View {
         address: address,
         balance: balance
       )
-    case let .art(data):
-      Text(data.description)
+    case let .link(link):
+      PushLinkWidgetView(link: link)
+        .widgetURL(
+          URL(string: link)
+        )
     default:
       ProgressView()
     }
