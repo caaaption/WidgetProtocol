@@ -15,6 +15,8 @@ var package = Package(
     .library(name: "ProgressAsyncImage", targets: ["ProgressAsyncImage"]),
     .library(name: "ProjectFeature", targets: ["ProjectFeature"]),
     .library(name: "ProjectListFeature", targets: ["ProjectListFeature"]),
+    .library(name: "SettingFeature", targets: ["SettingFeature"]),
+    .library(name: "ContributorFeature", targets: ["ContributorFeature"]),
   ],
   dependencies: [
     .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.51.0"),
@@ -24,6 +26,7 @@ var package = Package(
     .target(name: "EmptyWidget"),
     .target(name: "AppFeature", dependencies: [
       "ProjectListFeature",
+      "SettingFeature",
     ]),
     .target(name: "ProjectListFeature", dependencies: [
       "ProjectFeature",
@@ -39,6 +42,13 @@ var package = Package(
       "ProgressAsyncImage",
       .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
     ]),
+    .target(name: "SettingFeature", dependencies: [
+      "ContributorFeature",
+    ]),
+    .target(name: "ContributorFeature", dependencies: [
+      "GitHubClient",
+      "ProgressAsyncImage",
+    ])
   ]
 )
 
@@ -108,10 +118,14 @@ package.targets.append(contentsOf: [
 
 package.products.append(contentsOf: [
   .library(name: "UserDefaultsClient", targets: ["UserDefaultsClient"]),
+  .library(name: "GitHubClient", targets: ["GitHubClient"]),
 ])
 
 package.targets.append(contentsOf: [
   .target(name: "UserDefaultsClient", dependencies: [
+    .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+  ]),
+  .target(name: "GitHubClient", dependencies: [
     .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
   ]),
 ])
